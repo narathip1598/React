@@ -4,6 +4,8 @@ import Greet from './components/Greet'
 import Message from './components/Message'
 import Welcome from './components/Welcome';
 import firebase from './firebase/FirebaseConfig'
+import Calendar from './components/CalendarJS'
+
 
 function App() {
   const [data, setData] = useState(0);
@@ -12,8 +14,6 @@ function App() {
     console.log({data});
   });
 
-  firebase.database().ref('speed').push("25")
-
   return (
     <div className="App">
       <Greet name="Narathip"/>
@@ -21,6 +21,7 @@ function App() {
       <Greet name="Prayutt"/>
       <Message/>
       <Welcome name="Test Component"/>
+      <Calendar/>
       <p>
         ข้อมูลปัจจุบัน : {data}
       </p>
